@@ -1,0 +1,19 @@
+
+# DataSource
+spring:
+  datasource:
+    url: jdbc:h2:mem:dispatch;MODE=Oracle
+    username: sa
+    password:
+
+# Mybatis
+mybatis:
+  mapper-locations:
+    mybatis-mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+# Logging
+logging:
+  level:
+    com.tmax.hr.dispatch.repository: TRACE

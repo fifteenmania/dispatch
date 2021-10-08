@@ -2,10 +2,11 @@ package com.tmax.hr.dispatch.repository;
 
 
 import com.tmax.hr.dispatch.dto.EmpDispatchHistory;
-import com.tmax.hr.dispatch.dto.EmpStatus;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
+@Mapper
 public interface DispatchMapper {
-    public List<EmpDispatchHistory> selectEmpDispatchHistory(String empId);
+    List<EmpDispatchHistory> selectEmpDispatchHistory(String empId);
 }
