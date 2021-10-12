@@ -8,5 +8,5 @@ import java.util.List;
 
 @Mapper
 public interface DispatchMapper {
-    List<EmpDispatchHistory> selectEmpDispatchHistory(String empId);
+    List<EmpDispatchHistory> selectHistory(String empId);
 }

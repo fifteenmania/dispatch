@@ -12,4 +12,5 @@ public class Dispatch {
     private String dispatchId;
     @NonNull private String dispatchTitle;
     @NonNull private LocalDateTime dispatchStdt;
+    @NonNull private String approvalStatus;
 }

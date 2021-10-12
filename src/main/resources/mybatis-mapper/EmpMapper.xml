@@ -5,22 +5,10 @@
 
 <mapper namespace="com.tmax.hr.dispatch.repository.EmpMapper">
     <select id="selectById" resultType="com.tmax.hr.dispatch.dto.EmpStatus">
-        SELECT E.EMP_ID,
-            E.EMP_NM,
-            EDP.DUTY_CD,
-            DT.DUTY_NM
-        FROM EMP E,
-            EMP_DISPATCH EDP,
-            DUTY DT
-        WHERE E.EMP_ID = #{empId}
-            AND E.DISPATCH_ID = EDP.DISPATCH_ID
-            AND E.EMP_ID = EDP.EMP_ID
-            AND EDP.DUTY_CD = DT.DUTY_CD
+
     </select>
 
     <select id="selectAll" resultType="com.tmax.hr.dispatch.dto.EmpStatus">
-        SELECT EMP_ID,
-            EMP_NM
-        FROM EMP
+
     </select>
 </mapper>

@@ -5,38 +5,6 @@
 
 <mapper namespace="com.tmax.hr.dispatch.repository.DispatchMapper">
     <select id="selectEmpDispatchHistory" resultType="com.tmax.hr.dispatch.dto.EmpDispatchHistory">
-        WITH IDS (DISPATCH_ID, PREV_DISPATCH_ID) AS (
-            SELECT EDP.DISPATCH_ID,
-                EDP.PREV_DISPATCH_ID
-            FROM EMP_DISPATCH EDP,
-                EMP E
-            WHERE EDP.EMP_ID = #{empID}
-                AND E.EMP_ID = EDP.EMP_ID
-                AND EDP.DISPATCH_ID = E.DISPATCH_ID
-            UNION ALL
-            SELECT EDP.DISPATCH_ID,
-                EDP.PREV_DISPATCH_ID
-            FROM IDS,
-                EMP_DISPATCH EDP
-            WHERE IDS.PREV_DISPATCH_ID = EDP.DISPATCH_ID
-                AND EDP.EMP_ID = #{empId}
-        )
-        SELECT E.EMP_ID,
-            E.EMP_NM,
-            DP.DISPATCH_ID,
-            DP.DISPATCH_TITLE,
-            DP.DISPATCH_STDT,
-            DT.DUTY_CD,
-            DT.DUTY_NM
-        FROM IDS,
-            EMP E,
-            DISPATCH DP,
-            EMP_DISPATCH EDP,
-            DUTY DT
-        WHERE E.EMP_ID = #{empId}
-            AND DP.DISPATCH_ID = EDP.DISPATCH_ID
-            AND EDP.EMP_ID = #{empId}
-            AND EDP.DISPATCH_ID = IDS.DISPATCH_ID
-            AND DT.DUTY_CD = EDP.DUTY_CD
+
     </select>
 </mapper>

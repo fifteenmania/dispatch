@@ -13,6 +13,7 @@ public class EmpDispatchHistory {
     private String dispatchId;
     private String dispatchTitle;
     private String dispatchStdt;
+    private String dispatchEddt;
     private String dutyCd;
     private String dutyNm;
 }
